@@ -156,7 +156,15 @@ main h3 {
   }
 
   /*Tablet Viewport: Style rules for nav*/
+  nav li {
+    display: inline-block;
+    font-size: 1.25em;
+    border-top: none;
+  }
 
+  nav li a {
+    padding: 0.5em;
+  }
 
 
 }
