@@ -5,7 +5,7 @@ Date: 04/27/2021
 */
 
 /*CSS Reset*/
-body, header, nav, main, footer, img, h1, h3, ul, aside, figure, figcaption {
+body, header, nav, main, footer, img, h1, h3, ul, aside, figure, figcaption, video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -16,7 +16,7 @@ body, header, nav, main, footer, img, h1, h3, ul, aside, figure, figcaption {
       background-color: #f6eee4;
   }
 
-  img {
+  img video {
       display: block;
       max-width: 100%;
   }
