@@ -16,7 +16,7 @@ body, header, nav, main, footer, img, h1, h3, ul, aside, figure, figcaption, vid
       background-color: #f6eee4;
   }
 
-  img video {
+  img, video {
       display: block;
       max-width: 100%;
   }
@@ -28,9 +28,13 @@ body, header, nav, main, footer, img, h1, h3, ul, aside, figure, figcaption, vid
 
   
   /*Style rules to show mobile class and hide tab-desk class*/
-  .tab-desk .desktop {
+  .tab-desk, .desktop {
       display: none;
   }
+
+  #nav-links {
+    display: none;
+}
 
 
  /*Style rules for header area*/
@@ -38,6 +42,7 @@ body, header, nav, main, footer, img, h1, h3, ul, aside, figure, figcaption, vid
     padding: 2%;
     text-align: center;
     font-family: 'Emblema One', cursive;
+    margin: 2% 0 0 3%;
     
   }
 
@@ -52,28 +57,32 @@ body, header, nav, main, footer, img, h1, h3, ul, aside, figure, figcaption, vid
 
 
   /*Style rules for navigation*/
+.mobile-nav a {
+    color: #fff;
+    text-align: center;
+    font-size: 2em;
+    text-decoration: none;
+    padding: 3%;
+    display: block;
+}
+ 
+.mobile-nav a.nav-icon {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #f6eee4;
+    padding: 2%;
+}
+ 
+.nav-icon div { 
+    height: 40px;
+    width: 40px;
+    color: #2a1f14; 
+}
+
 nav {
       background-color: #2a1f14;
-  }
-
-nav ul {
-    list-style-type: none;
-    text-align: center;
-}
-
-nav li {
-    display: block;
-    font-size: 1.5em;
-    font-family: Geneva, Arial, sans-serif;
-    font-weight: bold;
-    border-top: 0.5px solid #f6eee4;
-}
-
-nav a {
-    display: block;
-    color: #f6eee4;
-    padding: 0.5em 2em 0.5em 2em;
-    text-decoration: none;
 }
 
 /*Style rules for main content*/
@@ -148,11 +157,26 @@ main h3 {
     margin: 0 auto;
  }
 
- .tel-link a {
+.tel-link a {
      color: #f6eee4;
      text-decoration: none;
      font-weight: bold;
  }
+
+#questions p { 
+    cursor: pointer;
+}
+ 
+#answer {
+    text-align: center;
+    font-weight: bold;
+    width: 80%;
+    margin: 0 auto;
+}
+ 
+#answer h2 { 
+    display: none;
+}
 
  /*Style rules for form elements*/
  fieldset {
@@ -203,160 +227,170 @@ main h3 {
 /*Media Query for Tablet Viewport*/
 @media screen and (min-width: 620px), print {
 
-  /*Tablet Viewport: Show tab-desk class, hide mobile class*/
-  .tab-desk {
-    display: block;
-  }
+        /*Tablet Viewport: Show tab-desk class, hide mobile class*/
+        .tab-desk {
+          display: block;
+        }
 
-  .mobile {
-    display: none;
-  }
+        .mobile, .mobile-nav {
+          display: none;
+        }
 
 
-  /*Tablet Viewport: Style rules for nav*/
-  nav li {
-    display: inline-block;
-    font-size: 1.25em;
-    border-top: none;
-  }
+        /*Tablet Viewport: Style rules for nav*/
+        nav ul {
+          list-style-type: none;
+          text-align: center;
+        }
+        
+        nav li {
+          display: inline-block;
+          font-size: 1.25em;
+          border-top: none;
+          font-family: Geneva, Arial, sans-serif;
+          font-weight: bold;
+        }
 
-  nav li a {
-    padding: 0.5em;
-  }
+        nav li a {
+          padding: 0.5em;
+          display: block;
+          color: #f6eee4;
+          text-decoration: none;
+        }
 
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-  }
+        .grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 10px;
+        }
 
-  aside {
-    grid-column: 1/span 2;
-  }
+        aside {
+          grid-column: 1/span 2;
+        }
 
- /*Tablet Viewport: Style rule for form element*/
- form {
-   width: 70%;
-   margin: 0 auto;
- }
+      /*Tablet Viewport: Style rule for form element*/
+      form {
+        width: 70%;
+        margin: 0 auto;
+      }
 
-}
+      }
 
 /*Media Query for Desktop Viewport*/
-@media screen and (min-width: 1000px) {
-    
+ @media screen and (min-width: 1000px) {
+          
 
-    /*Desktop Viewport: Show desktop class, hide mobile-tablet class*/
-    .mobile-tablet {
-      display: none;
-    }
-    /*Desktop Viewport: Style rules for nav area*/
-    nav li {
-      font-size: 1.5em;
-      display: inline-block;
-    }
+          /*Desktop Viewport: Show desktop class, hide mobile-tablet class*/
+          .mobile-tablet {
+            display: none;
+          }
+          /*Desktop Viewport: Style rules for nav area*/
+          nav li {
+            font-size: 1.5em;
+            display: inline-block;
+          }
 
-    nav li a {
-      padding: 0.5em 1.5em;
-    }
+          nav li a {
+            padding: 0.5em 1.5em;
+          }
 
-    nav li a:hover {
-      color: #2a1f14;
-      background-color: #f6eee4;
-      opacity: 0.5;
-    }
+          nav li a:hover {
+            color: #2a1f14;
+            background-color: #f6eee4;
+            opacity: 0.5;
+          }
 
-    /*Desktop Viewport: Style rules for main content*/
-    #info ul {
-      margin-left: 5%;
-    }
+          /*Desktop Viewport: Style rules for main content*/
+          #info ul {
+            margin-left: 5%;
+          }
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 30px;
-    }
+          .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 30px;
+          }
 
-    aside {
-      grid-column: 1/span 3;
-      font-size: 2em;
-    }
+          aside {
+            grid-column: 1/span 3;
+            font-size: 2em;
+          }
 
-    /*Style rules for table*/
-    table {
-      border: 1px solid #2a1f14;
-      border-collapse: collapse;
-      margin: 0 auto;
-    }
+          /*Style rules for table*/
+          table {
+            border: 1px solid #2a1f14;
+            border-collapse: collapse;
+            margin: 0 auto;
+          }
 
-    caption {
-      font-size: 1.5em;
-      font-weight: bold;
-      padding: 1%;
-    }
+          caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 1%;
+          }
 
-    th {
-      border: 1px solid #2a1f14;
-      padding: 1%;
-    }
+          th {
+            border: 1px solid #2a1f14;
+            padding: 1%;
+          }
 
-    td {
-      border: 1px solid #2a1f14;
-      padding: 1%;
-    }
+          td {
+            border: 1px solid #2a1f14;
+            padding: 1%;
+          }
 
-    th {
-      background-color: #2a1f14;
-      color: #fff;
-      font-size: 1.15em;
-    }
+          th {
+            background-color: #2a1f14;
+            color: #fff;
+            font-size: 1.15em;
+          }
 
-    tr {
-      background-color: #deccba;
-    }
+          tr {
+            background-color: #deccba;
+          }
 
-    /*Desktop Viewport: Style rules for form elements*/
-    form {
-      width: auto;
-    }
+          /*Desktop Viewport: Style rules for form elements*/
+          form {
+            width: auto;
+          }
 
-    .form-grid {
-      display: grid;
-      grid-template-columns: auto auto;
-      grid-gap: 20px;
-    }
+          .form-grid {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 20px;
+          }
 
-    .btn {
-      grid-column: 1/span 2;
-    }
+          .btn {
+            grid-column: 1/span 2;
+          }
 
-}
+      }
 
 
-/*Media Query for Large Desktop Viewports*/
-@media screen and (min-width: 1921px) {
-  body {
-    background: linear-gradient(#f6eee4, #78593a);
-  }
+      /*Media Query for Large Desktop Viewports*/
+      @media screen and (min-width: 1921px) {
+        body {
+          background: linear-gradient(#f6eee4, #78593a);
+        }
 
-  #wrapper {
-    width: 1920px;
-    margin: 0 auto;
-  }
+        #wrapper {
+          width: 1920px;
+          margin: 0 auto;
+        }
 
-  main {
-    background-color:#f6eee4;
-  }
+        main {
+          background-color:#f6eee4;
+        }
 
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
+        .grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
 
-  aside {
-    grid-column: 1/span 4;
-    font-size: 3em;
-  }
+        aside {
+          grid-column: 1/span 4;
+          font-size: 3em;
+        }
 
 }
 
